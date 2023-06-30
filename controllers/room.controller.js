@@ -12,7 +12,7 @@ const getRoom = (req, res)=>{
         res.json(result)
     }, err=>{
         console.log(err)
-        res.status(300).json({message: 'Internal Server Error'})
+        res.status(500).json({message: 'Internal Server Error'})
     })
 }
 const uploadDetails = (req, res)=>{
