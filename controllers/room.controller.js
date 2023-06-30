@@ -33,9 +33,8 @@ const uploadDetails = (req, res)=>{
 }
 const checkRoom = (req, res)=>{
     let roomData = req.body
-    console.log(roomData)
     RoomModel.findOne({category: roomData.category}).then((room)=>{
-        if (room.available >= roomData.rooms) {
+        if (parseInt(room.available) >= parseInt(roomData.rooms)) {
             res.json("Checked")
         } else {
             res.json('Unavailable')
