@@ -32,5 +32,5 @@ mongoose.connect(process.env.URI).then(()=>{
 })
 
 const connection = app.listen(process.env.PORT, (req, res)=>{
-    console.log('Accomodation Server is now listening on Port 5000.')
+    console.log(`Accomodation Server is now listening on Port ${process.env.PORT}.`)
 })
