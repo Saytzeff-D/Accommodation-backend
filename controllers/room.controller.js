@@ -51,5 +51,12 @@ const roomPrice = (req, res)=>{
         res.status(300).json('Internal Server Error')
     })
 }
+const deleteRoom = (req, res)=>{
+    RoomModel.findByIdAndDelete(req.body.id).then(()=>{
+        res.status(200).json('Success')
+    }).catch(()=>{
+        res.status(500).json('Internal Server Error')
+    })
+}
 
-module.exports = { getRoom, uploadDetails, checkRoom, roomPrice }
+module.exports = { getRoom, uploadDetails, checkRoom, roomPrice, deleteRoom }
