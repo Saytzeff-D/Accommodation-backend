@@ -30,5 +30,12 @@ const getBanner = (req, res)=>{
         res.status(500).json({message: 'Internal Server Error'})
     })
 }
+const deleteBanner = (req, res)=>{
+    BannerModel.findByIdAndDelete(req.body.id).then(()=>{
+        res.status(200).json('Success')
+    }).catch(()=>{
+        res.status(500).json('Internal Server Error')
+    })
+}
 
-module.exports = { setBanner, getBanner }
+module.exports = { setBanner, getBanner, deleteBanner }
