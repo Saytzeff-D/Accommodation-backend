@@ -29,6 +29,10 @@ mongoose.connect(process.env.URI).then(()=>{
     console.log(err)
 })
 
+app.get('/', (req, res)=>{
+    res.send('Welcome to the Accommodation Service Server')
+})
+
 const connection = app.listen(process.env.PORT, (req, res)=>{
     console.log(`Accomodation Server is now listening on Port ${process.env.PORT}.`)
 })
